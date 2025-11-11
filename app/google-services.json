@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "303051664487",
+    "firebase_url": "https://bpsu-fixit-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bpsu-fixit",
+    "storage_bucket": "bpsu-fixit.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303051664487:android:62ad3953754caa4f1cf8c2",
+        "android_client_info": {
+          "package_name": "com.example.bpsufixit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ9-DP4Bp3Al55UIwCxbeKtdv6QE9hgvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
