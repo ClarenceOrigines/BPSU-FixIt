@@ -98,11 +98,7 @@ public class AdminActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * Shows dialog to add or an announcement.
-     * Pass id == null and existing == null to create new.
-     * Pass id != null and existing != null to edit.
-     */
+
     private void showAnnouncementDialog(String id, Announcement existing) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_add_announcement, null);

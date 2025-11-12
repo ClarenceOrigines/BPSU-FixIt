@@ -18,7 +18,7 @@ public class ReportActivity extends AppCompatActivity {
     Button AsendReportButton;
     DatabaseReference databaseReports;
 
-    private boolean isAdmin = false; // ✅ add flag
+    private boolean isAdmin = false; //  add flag
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +30,10 @@ public class ReportActivity extends AppCompatActivity {
         descriptionEditText = findViewById(R.id.descriptionEditText);
         AsendReportButton = findViewById(R.id.AsendReportButton);
 
-        // ✅ Get admin flag from previous activity
+        //  Get admin flag from previous activity
         isAdmin = getIntent().getBooleanExtra("isAdmin", false);
 
-        // ✅ Show Admin tab if admin is true
+        //  Show Admin tab if admin is true
         TextView tvAdmin = findViewById(R.id.tvAdmin);
         if (tvAdmin != null) {
             tvAdmin.setVisibility(isAdmin ? View.VISIBLE : View.GONE);
@@ -59,7 +59,7 @@ public class ReportActivity extends AppCompatActivity {
 
             Toast.makeText(this, "Report Sent!", Toast.LENGTH_SHORT).show();
 
-            // ✅ Clear fields
+            //  Clear fields
             locationEditText.setText("");
             categoryEditText.setText("");
             descriptionEditText.setText("");
@@ -79,7 +79,7 @@ public class ReportActivity extends AppCompatActivity {
             tvReport.setAlpha(0.7f);
         }
 
-        // ✅ Home navigation (keep admin flag)
+        //  Home navigation (keep admin flag)
         if (tvHome != null) {
             tvHome.setOnClickListener(v -> {
                 Intent intent = new Intent(ReportActivity.this, MainActivity.class);
@@ -88,7 +88,7 @@ public class ReportActivity extends AppCompatActivity {
             });
         }
 
-        // ✅ Admin navigation (always show admin)
+        //  Admin navigation (always show admin)
         if (tvAdmin != null) {
             tvAdmin.setOnClickListener(v -> {
                 Intent intent = new Intent(ReportActivity.this, AdminActivity.class);

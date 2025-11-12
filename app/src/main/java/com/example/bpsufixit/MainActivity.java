@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
     TextView mainReports, mainAnnouncement;
     DatabaseReference databaseReports, databaseAnnouncements;
-    private boolean isAdmin = false; // ✅ store flag globally
+    private boolean isAdmin = false;
 
 
     @Override
@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         setupHeaderNavigation();
 
-        // ✅ Check if user is admin (from LoginActivity or AdminActivity)
+        //  Check if user is admin
         isAdmin = getIntent().getBooleanExtra("isAdmin", false);
 
-        // ✅ Find views
+
         TextView tvAdmin = findViewById(R.id.tvAdmin);
         MaterialButton btnLogin = findViewById(R.id.btnLogin);
 
-        // ✅ Show/hide admin text
+        //  Show/hide admin text
         if (tvAdmin != null) {
             tvAdmin.setVisibility(isAdmin ? View.VISIBLE : View.GONE);
         }
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         loadAnnouncements();
         loadReports();
 
-        // ✅ Hide login button if admin is visible
+        //  Hide login button if admin is visible
         if (btnLogin != null) {
             if (isAdmin) {
                 btnLogin.setVisibility(View.GONE); // 👈 hides button for admin
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (tvReport != null) {
             tvReport.setOnClickListener(v -> {
-                // ✅ Keep admin flag when going to ReportActivity
+                //  Keep admin flag when going to ReportActivity
                 Intent intent = new Intent(MainActivity.this, ReportActivity.class);
                 intent.putExtra("isAdmin", isAdmin);
                 startActivity(intent);
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (tvAdmin != null) {
             tvAdmin.setOnClickListener(v -> {
-                // ✅ Always pass admin flag so Admin tab stays visible
+                //  Always pass admin flag so Admin tab stays visible
                 Intent intent = new Intent(MainActivity.this, AdminActivity.class);
                 intent.putExtra("isAdmin", true);
                 startActivity(intent);

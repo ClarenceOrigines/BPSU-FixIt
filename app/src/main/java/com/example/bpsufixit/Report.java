@@ -8,7 +8,7 @@ public class Report {
     public String status;
 
     public Report() {
-        // Empty constructor required by Firebase
+
     }
 
     public Report(String id, String location, String category, String description, String status) {
